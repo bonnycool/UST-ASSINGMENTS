@@ -1,1 +1,2 @@
-Select-String -Path src\config.py -Pattern "EMBEDDING_MODEL_NAME" | ForEach-Object { $_.Line }
+$env:HF_HOME = "$env:USERPROFILE\.cache\huggingface"
+python -m streamlit run app.py --server.address 127.0.0.1 --server.fileWatcherType none
