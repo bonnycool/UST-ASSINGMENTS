@@ -1,5 +1,1 @@
-@'
-from sentence_transformers import SentenceTransformer
-SentenceTransformer("all-MiniLM-L6-v2", local_files_only=True)
-print("MODEL LOADED SUCCESSFULLY")
-'@ | python -
+Get-ChildItem src -Recurse -Filter *.py | Select-String -Pattern 'embedding_model|EMBEDDING_MODEL|all-MiniLM|persist_directory|chroma_path' | Select-Object -First 25 Path,LineNumber,Line
